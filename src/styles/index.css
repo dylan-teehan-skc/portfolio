@@ -1,0 +1,496 @@
+/* Basic styles */
+
+/* Style for anchor tags to inherit color and remove underline */
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+/* Style for the title container */
+section .title {
+  max-width: 60%;
+  width: 100%;
+  align-self: center;
+  transform: translateY(-50px);
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 15px; /* Slightly reduced padding */
+  position: relative;
+  z-index: 1;
+  
+  /* More subtle box */
+  border: 1px solid #545657; /* Thinner, more transparent border */
+  box-shadow: 0 0 8px rgba(247, 202, 24, 0.05); /* Softer, less noticeable glow */
+  background-color: rgba(27, 27, 27, 0.3); /* More transparent background */
+  border-radius: 5px; /* Slightly rounded corners */
+  text-align: center;
+}
+
+
+/* Styling for title spans */
+section .title span {
+  align-content: center;
+  display: inline-block;
+  font-size: 5vw;
+  color: #efefef; /* Light text color */
+  width: 100%;
+  text-transform: uppercase;
+  transform: translateX(-100%);
+  animation: byBottom 1s ease both;
+  font-weight: 600;
+  letter-spacing: 0.25vw;
+}
+
+/* Target the last span inside the title class and set its color to yellow */
+section .title span:last-child {
+  color: #46aed7; /* Yellow color */
+  font-size: 1rem; /* Smaller font size */
+  animation: byBottom 1s 0.25s ease both; /* Apply animation with delay */
+}
+
+/* Basic body styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* Style for selected text */
+::selection {
+  background-color: #f7ca18; /* Yellow background */
+  color: #1b1b1b; /* Dark text color */
+}
+
+/* Section styles */
+section {
+  background-color: #1b1b1b; /* Dark background color */
+  height: 100vh; /* Full viewport height */
+  display: flex; /* Flexbox for alignment */
+  position: relative; /* Position relative for bubble effect */
+}
+
+/* Bubble background effect */
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(16, 105, 135, 0.8), rgba(255, 255, 255, 0.4));
+  box-shadow: 0 0 10px rgba(92, 142, 177, 0.3), inset 0 0 20px rgba(255, 255, 255, 0.3);
+  animation: bubble 15s infinite;
+  z-index: 0;
+  bottom: -200px;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.bubble:nth-child(2) {
+  width: 150px;
+  height: 150px;
+  left: 50%;
+  animation-delay: 1s;
+}
+
+.bubble:nth-child(3) {
+  width: 200px;
+  height: 200px;
+  left: 80%;
+  animation-delay: 3s;
+}
+
+.bubble:nth-child(4) {
+  width: 120px;
+  height: 120px;
+  left: 5%;
+  animation-delay: 5s;
+}
+
+/* Keyframes for bubbles animation */
+@keyframes bubble {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-100vh) translateX(20px);
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.2;
+  }
+  95% {
+    transform: translateY(-120vh) translateX(-20px);
+  }
+}
+
+/* Add a pseudo-element for shine effect */
+.bubble::after {
+  content: '';
+  position: absolute;
+  top: 15%;
+  left: 15%;
+  width: 30%;
+  height: 30%;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.8), transparent);
+  border-radius: 50%;
+}
+
+/* Title styles */
+section .title {
+  max-width: 60%; /* Limit width to 60% */
+  width: 100%; /* Full width */
+  align-self: center; /* Center vertically */
+  transform: translateY(-50px); /* Move up slightly */
+  margin: 0 auto; /* Center horizontally */
+  overflow: hidden; /* Hide overflowing content */
+  padding-bottom: 10px; /* Padding at the bottom */
+  position: relative; /* Position relative for title */
+  z-index: 1; /* Ensure title is above bubbles */
+}
+
+/* Styling for title spans */
+section .title span {
+  display: inline-block; /* Inline-block for alignment */
+  font-size: 5vw; /* Font size as a percentage of viewport width */
+  color: #efefef; /* Light text color */
+  width: 100%; /* Full width */
+  text-transform: uppercase; /* Uppercase text */
+  transform: translateX(-100%); /* Initial off-screen position */
+  animation: byBottom 1s ease both; /* Apply animation */
+  font-weight: 600; /* Font weight */
+  letter-spacing: 0.25vw; /* Spacing between letters */
+}
+
+/* Style for the last child span in the title */
+section .title span:last-child {
+  font-size: 1rem; /* Smaller font size */
+  animation: byBottom 1s 0.25s ease both; /* Apply animation with delay */
+}
+
+/* Styling for links inside title spans */
+section .title span a {
+  position: relative; /* Relative positioning for links */
+  display: inline-block; /* Inline-block for alignment */
+  margin-left: 0.5rem; /* Margin to the left */
+  text-decoration: none; /* Remove underline */
+  color: #f7ca18; /* Yellow text color */
+}
+
+/* Style for the pseudo-element after title links */
+section .title span a::after {
+  content: ""; /* Empty content for the line */
+  height: 2px; /* Line height */
+  background-color: #f7ca18; /* Yellow line */
+  position: absolute; /* Absolute positioning for the line */
+  bottom: -10px; /* Position below the text */
+  left: 0; /* Align to the left edge */
+  width: 0; /* Initial width */
+  animation: linkAfter 0.5s 1s ease both; /* Apply animation */
+}
+
+/* Keyframes for pop animation */
+@keyframes pop {
+  0% {
+    transform: translateY(100%); /* Start below */
+  }
+  100% {
+    transform: translateY(0); /* End at original position */
+  }
+}
+
+/* Keyframes for title animation */
+@keyframes byBottom {
+  0% {
+    transform: translateY(150%); /* Start off-screen */
+  }
+  100% {
+    transform: translateY(0); /* End at original position */
+  }
+}
+
+/* Keyframes for link underline animation */
+@keyframes linkAfter {
+  0% {
+    width: 0; /* Start with no width */
+  }
+  100% {
+    width: 30px; /* End with specified width */
+  }
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 50px auto;
+}
+
+/* Navigation styles */
+
+/* Navigation bar styling */
+nav {
+  width: 100%; /* Full width */
+  background-color: #0b0b0b; /* Dark background color */
+  position: fixed; /* Fixes position at the bottom */
+  bottom: 0; /* Aligns to the bottom of the viewport */
+  height: 100px; /* Set height */
+  overflow: hidden; /* Hide any overflow */
+  z-index: 1; /* Ensure nav is above other content */
+}
+
+/* Styling for the unordered list inside the nav */
+nav ul {
+  position: absolute; /* Absolute positioning for the list */
+  top: 0; /* Align to the top of the nav */
+  left: 0; /* Align to the left edge */
+  list-style-type: none; /* Remove bullet points */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margin */
+  width: 140vw; /* Extend the width beyond the viewport */
+}
+
+/* Styling for each list item in the nav */
+nav li {
+  margin: 0; /* Remove margin */
+  float: left; /* Float items to the left */
+  display: inline-block; /* Display inline-block for alignment */
+  height: 98px; /* Set height */
+  margin-bottom: 2px; /* Margin at the bottom */
+  line-height: 100px; /* Line height for vertical centering */
+  width: 20vw; /* Set width as a percentage of viewport width */
+  text-align: center; /* Center text */
+  color: #555; /* Text color */
+  transition: background-color 0.5s 0.2s ease, color 0.3s ease; /* Smooth transition effects */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-size: 12px; /* Font size */
+  text-transform: uppercase; /* Uppercase text */
+  letter-spacing: 4px; /* Spacing between letters */
+  font-weight: 800; /* Font weight */
+  transform: translateY(100%); /* Initial position for animation */
+  position: relative; /* Relative positioning for pseudo-elements */
+}
+
+/* Style for active list item */
+nav li.active {
+  background-color: #151515; /* Dark background for active state */
+  color: #efefef; /* Light text color for active state */
+}
+
+/* Style for the pseudo-element after active list item */
+nav li.active::after {
+  content: ""; /* Empty content for the line */
+  position: absolute; /* Absolute positioning for the line */
+  bottom: -2px; /* Position the line at the bottom */
+  left: 0; /* Align to the left edge */
+  width: 100%; /* Full width of the list item */
+  height: 2px; /* Height of the line */
+  background-color: #f7ca18; /* Yellow line */
+}
+
+/* Animation for list items */
+nav li:nth-child(1) {
+  animation: pop 0.5s 0.15s 1 forwards; /* Apply animation */
+}
+
+nav li:nth-child(2) {
+  animation: pop 0.5s 0.3s 1 forwards; /* Apply animation */
+}
+
+nav li:nth-child(3) {
+  animation: pop 0.5s 0.45s 1 forwards; /* Apply animation */
+}
+
+nav li:nth-child(4) {
+  animation: pop 0.5s 0.6s 1 forwards; /* Apply animation */
+}
+
+nav li:nth-child(5) {
+  animation: pop 0.5s 0.75s 1 forwards; /* Apply animation */
+}
+
+nav li:nth-child(6) {
+  animation: pop 0.5s 0.9s 1 forwards; /* Apply animation */
+}
+
+nav li:nth-child(7) {
+  animation: pop 0.5s 1.05s 1 forwards; /* Apply animation */
+}
+
+/* Hover and active states for list items */
+nav li:hover {
+  color: #ececec; /* Light color on hover */
+}
+
+nav li:active {
+  background-color: #222; /* Darker background on active state */
+}
+
+/* Slide effect for list items */
+nav li:nth-child(1):hover ~ .slide {
+  left: 0; /* Move slide to the first item */
+}
+
+nav li:nth-child(2):hover ~ .slide {
+  left: 20vw; /* Move slide to the second item */
+}
+
+nav li:nth-child(3):hover ~ .slide {
+  left: 40vw; /* Move slide to the third item */
+}
+
+nav li:nth-child(4):hover ~ .slide {
+  left: 60vw; /* Move slide to the fourth item */
+}
+
+nav li:nth-child(5):hover ~ .slide {
+  left: 80vw; /* Move slide to the fifth item */
+}
+
+nav li:nth-child(6):hover ~ .slide {
+  left: 100vw; /* Move slide to the sixth item */
+}
+
+nav li:nth-child(7):hover ~ .slide {
+  left: 120vw; /* Move slide to the seventh item */
+}
+
+/* Styling for the sliding element */
+nav li.slide {
+  position: absolute; /* Absolute positioning for the slide */
+  left: -20vw; /* Initial off-screen position */
+  top: 0; /* Align to the top of the nav */
+  background-color: #fff; /* White background */
+  z-index: -1; /* Place behind other content */
+  height: 2px; /* Height of the slide */
+  margin-top: 98px; /* Position below the nav items */
+  transition: left 0.3s ease; /* Smooth transition effect */
+  transform: translateY(0); /* Ensure vertical alignment */
+}
+
+.about-section {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5% 10%;
+}
+
+.about-section .circular-box {
+  position: absolute;
+  left: 7%;
+  margin-bottom: 17%;
+  width: 30vw;
+  height: 30vw;
+  max-width: 250px;
+  max-height: 250px;
+  border-radius: 50%;
+  background-color: rgba(70, 174, 215, 0.2);
+  border: 0.5vw solid #46aed7;
+  z-index: 0;
+}
+
+.about-section .circular-box .headshot-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* This will ensure the image covers the entire circular box */
+  object-position: center; /* This centers the image within the circular box */
+}
+
+.about-section .text-box {
+  width: 150%;
+  height: 55%;
+  padding: 3%;
+  margin-left: 25%;
+  margin-bottom: 20%;
+  position: relative;
+  z-index: 1;
+  border: 1px solid #545657;
+  box-shadow: 0 0 8px rgba(247, 202, 24, 0.05);
+  background-color: rgba(49, 48, 48, 0.3);
+  border-radius: 5px;
+  text-align: left;
+  color: white;
+}
+
+.about-section .section-title h1{
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  color: #f7ca18;;
+  font-weight: 200;
+  font-size: 30px;
+  letter-spacing: 0.25em;
+  text-align: center;
+}
+
+.about-section .text-box h2{
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  color: white;
+  font-weight: 200;
+  font-size: 20px;
+}
+
+.projects-section {
+  background-color: #1b1b1b;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5% 10%;
+  position: relative;
+}
+
+.projects-section .section-title h1 {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  color: #f7ca18;
+  font-weight: 200;
+  font-size: 30px;
+  letter-spacing: 0.25em;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.projects-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  width: 90%;
+}
+
+.project-card {
+  background-color: rgba(27, 27, 27, 0.3);
+  border: 1px solid #545657;
+  box-shadow: 0 0 8px rgba(247, 202, 24, 0.05);
+  border-radius: 5px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.project-info {
+  padding: 15px;
+}
+
+.project-title {
+  font-size: 20px;
+  color: #efefef;
+  margin-bottom: 10px;
+}
+
+.project-description {
+  font-size: 14px;
+  color: #cccccc;
+}
