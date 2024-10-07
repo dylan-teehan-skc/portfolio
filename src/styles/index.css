@@ -1,11 +1,8 @@
-/* Basic styles */
-
-/* Style for anchor tags to inherit color and remove underline */
 a {
   color: inherit;
   text-decoration: inherit;
 }
-
+ 
 /* Style for the title container */
 section .title {
   max-width: 60%;
@@ -17,16 +14,14 @@ section .title {
   padding: 15px; /* Slightly reduced padding */
   position: relative;
   z-index: 1;
-  
-  /* More subtle box */
   border: 1px solid #545657; /* Thinner, more transparent border */
   box-shadow: 0 0 8px rgba(247, 202, 24, 0.05); /* Softer, less noticeable glow */
   background-color: rgba(27, 27, 27, 0.3); /* More transparent background */
   border-radius: 5px; /* Slightly rounded corners */
   text-align: center;
 }
-
-
+ 
+ 
 /* Styling for title spans */
 section .title span {
   align-content: center;
@@ -40,27 +35,32 @@ section .title span {
   font-weight: 600;
   letter-spacing: 0.25vw;
 }
-
+ 
 /* Target the last span inside the title class and set its color to yellow */
 section .title span:last-child {
   color: #46aed7; /* Yellow color */
   font-size: 1rem; /* Smaller font size */
   animation: byBottom 1s 0.25s ease both; /* Apply animation with delay */
 }
-
+ 
+section .body{
+  font-size: medium;
+  color: white;
+  text-align: center;
+}
 /* Basic body styles */
 body {
   margin: 0;
   padding: 0;
   font-family: 'Open Sans', sans-serif;
 }
-
+ 
 /* Style for selected text */
 ::selection {
   background-color: #f7ca18; /* Yellow background */
   color: #1b1b1b; /* Dark text color */
 }
-
+ 
 /* Section styles */
 section {
   background-color: #1b1b1b; /* Dark background color */
@@ -68,7 +68,7 @@ section {
   display: flex; /* Flexbox for alignment */
   position: relative; /* Position relative for bubble effect */
 }
-
+ 
 /* Bubble background effect */
 .bubble {
   position: absolute;
@@ -81,28 +81,28 @@ section {
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
 }
-
+ 
 .bubble:nth-child(2) {
   width: 150px;
   height: 150px;
   left: 50%;
   animation-delay: 1s;
 }
-
+ 
 .bubble:nth-child(3) {
   width: 200px;
   height: 200px;
   left: 80%;
   animation-delay: 3s;
 }
-
+ 
 .bubble:nth-child(4) {
   width: 120px;
   height: 120px;
   left: 5%;
   animation-delay: 5s;
 }
-
+ 
 /* Keyframes for bubbles animation */
 @keyframes bubble {
   0%, 100% {
@@ -123,7 +123,7 @@ section {
     transform: translateY(-120vh) translateX(-20px);
   }
 }
-
+ 
 /* Add a pseudo-element for shine effect */
 .bubble::after {
   content: '';
@@ -135,7 +135,7 @@ section {
   background: radial-gradient(circle at center, rgba(255, 255, 255, 0.8), transparent);
   border-radius: 50%;
 }
-
+ 
 /* Title styles */
 section .title {
   max-width: 60%; /* Limit width to 60% */
@@ -148,7 +148,7 @@ section .title {
   position: relative; /* Position relative for title */
   z-index: 1; /* Ensure title is above bubbles */
 }
-
+ 
 /* Styling for title spans */
 section .title span {
   display: inline-block; /* Inline-block for alignment */
@@ -161,13 +161,13 @@ section .title span {
   font-weight: 600; /* Font weight */
   letter-spacing: 0.25vw; /* Spacing between letters */
 }
-
+ 
 /* Style for the last child span in the title */
 section .title span:last-child {
   font-size: 1rem; /* Smaller font size */
   animation: byBottom 1s 0.25s ease both; /* Apply animation with delay */
 }
-
+ 
 /* Styling for links inside title spans */
 section .title span a {
   position: relative; /* Relative positioning for links */
@@ -176,7 +176,7 @@ section .title span a {
   text-decoration: none; /* Remove underline */
   color: #f7ca18; /* Yellow text color */
 }
-
+ 
 /* Style for the pseudo-element after title links */
 section .title span a::after {
   content: ""; /* Empty content for the line */
@@ -188,7 +188,7 @@ section .title span a::after {
   width: 0; /* Initial width */
   animation: linkAfter 0.5s 1s ease both; /* Apply animation */
 }
-
+ 
 /* Keyframes for pop animation */
 @keyframes pop {
   0% {
@@ -198,7 +198,7 @@ section .title span a::after {
     transform: translateY(0); /* End at original position */
   }
 }
-
+ 
 /* Keyframes for title animation */
 @keyframes byBottom {
   0% {
@@ -208,7 +208,7 @@ section .title span a::after {
     transform: translateY(0); /* End at original position */
   }
 }
-
+ 
 /* Keyframes for link underline animation */
 @keyframes linkAfter {
   0% {
@@ -218,7 +218,7 @@ section .title span a::after {
     width: 30px; /* End with specified width */
   }
 }
-
+ 
 .about-container {
   display: flex;
   align-items: center;
@@ -230,10 +230,7 @@ section .title span a::after {
   max-width: 800px;
   margin: 50px auto;
 }
-
-/* Navigation styles */
-
-/* Navigation bar styling */
+ 
 nav {
   width: 100%; /* Full width */
   background-color: #0b0b0b; /* Dark background color */
@@ -243,7 +240,7 @@ nav {
   overflow: hidden; /* Hide any overflow */
   z-index: 1; /* Ensure nav is above other content */
 }
-
+ 
 /* Styling for the unordered list inside the nav */
 nav ul {
   position: absolute; /* Absolute positioning for the list */
@@ -254,7 +251,7 @@ nav ul {
   margin: 0; /* Remove margin */
   width: 140vw; /* Extend the width beyond the viewport */
 }
-
+ 
 /* Styling for each list item in the nav */
 nav li {
   margin: 0; /* Remove margin */
@@ -275,13 +272,13 @@ nav li {
   transform: translateY(100%); /* Initial position for animation */
   position: relative; /* Relative positioning for pseudo-elements */
 }
-
+ 
 /* Style for active list item */
 nav li.active {
   background-color: #151515; /* Dark background for active state */
   color: #efefef; /* Light text color for active state */
 }
-
+ 
 /* Style for the pseudo-element after active list item */
 nav li.active::after {
   content: ""; /* Empty content for the line */
@@ -292,74 +289,74 @@ nav li.active::after {
   height: 2px; /* Height of the line */
   background-color: #f7ca18; /* Yellow line */
 }
-
+ 
 /* Animation for list items */
 nav li:nth-child(1) {
   animation: pop 0.5s 0.15s 1 forwards; /* Apply animation */
 }
-
+ 
 nav li:nth-child(2) {
   animation: pop 0.5s 0.3s 1 forwards; /* Apply animation */
 }
-
+ 
 nav li:nth-child(3) {
   animation: pop 0.5s 0.45s 1 forwards; /* Apply animation */
 }
-
+ 
 nav li:nth-child(4) {
   animation: pop 0.5s 0.6s 1 forwards; /* Apply animation */
 }
-
+ 
 nav li:nth-child(5) {
   animation: pop 0.5s 0.75s 1 forwards; /* Apply animation */
 }
-
+ 
 nav li:nth-child(6) {
   animation: pop 0.5s 0.9s 1 forwards; /* Apply animation */
 }
-
+ 
 nav li:nth-child(7) {
   animation: pop 0.5s 1.05s 1 forwards; /* Apply animation */
 }
-
+ 
 /* Hover and active states for list items */
 nav li:hover {
   color: #ececec; /* Light color on hover */
 }
-
+ 
 nav li:active {
   background-color: #222; /* Darker background on active state */
 }
-
+ 
 /* Slide effect for list items */
 nav li:nth-child(1):hover ~ .slide {
   left: 0; /* Move slide to the first item */
 }
-
+ 
 nav li:nth-child(2):hover ~ .slide {
   left: 20vw; /* Move slide to the second item */
 }
-
+ 
 nav li:nth-child(3):hover ~ .slide {
   left: 40vw; /* Move slide to the third item */
 }
-
+ 
 nav li:nth-child(4):hover ~ .slide {
   left: 60vw; /* Move slide to the fourth item */
 }
-
+ 
 nav li:nth-child(5):hover ~ .slide {
   left: 80vw; /* Move slide to the fifth item */
 }
-
+ 
 nav li:nth-child(6):hover ~ .slide {
   left: 100vw; /* Move slide to the sixth item */
 }
-
+ 
 nav li:nth-child(7):hover ~ .slide {
   left: 120vw; /* Move slide to the seventh item */
 }
-
+ 
 /* Styling for the sliding element */
 nav li.slide {
   position: absolute; /* Absolute positioning for the slide */
@@ -372,7 +369,7 @@ nav li.slide {
   transition: left 0.3s ease; /* Smooth transition effect */
   transform: translateY(0); /* Ensure vertical alignment */
 }
-
+ 
 .about-section {
   position: relative;
   display: flex;
@@ -380,7 +377,7 @@ nav li.slide {
   align-items: center;
   padding: 5% 10%;
 }
-
+ 
 .about-section .circular-box {
   position: absolute;
   left: 7%;
@@ -394,14 +391,14 @@ nav li.slide {
   border: 0.5vw solid #46aed7;
   z-index: 0;
 }
-
+ 
 .about-section .circular-box .headshot-image {
   width: 100%;
   height: 100%;
   object-fit: cover; /* This will ensure the image covers the entire circular box */
   object-position: center; /* This centers the image within the circular box */
 }
-
+ 
 .about-section .text-box {
   width: 150%;
   height: 55%;
@@ -417,7 +414,7 @@ nav li.slide {
   text-align: left;
   color: white;
 }
-
+ 
 .about-section .section-title h1{
   font-size: clamp(1rem, 2vw, 1.5rem);
   color: #f7ca18;;
@@ -426,14 +423,14 @@ nav li.slide {
   letter-spacing: 0.25em;
   text-align: center;
 }
-
+ 
 .about-section .text-box h2{
   font-size: clamp(1rem, 2vw, 1.5rem);
   color: white;
   font-weight: 200;
   font-size: 20px;
 }
-
+ 
 .projects-section {
   background-color: #1b1b1b;
   min-height: 100vh;
@@ -442,8 +439,14 @@ nav li.slide {
   align-items: center;
   padding: 5% 10%;
   position: relative;
+  overflow: auto;
 }
-
+ 
+.projects-section .projects-container .project-image {
+  width: 100%;
+  height: 400px;
+}
+ 
 .projects-section .section-title h1 {
   font-size: clamp(1rem, 2vw, 1.5rem);
   color: #f7ca18;
@@ -453,14 +456,31 @@ nav li.slide {
   text-align: center;
   margin-bottom: 40px;
 }
-
+ 
+.projects-section .text-box {
+  width: 100%;
+  height: 100%;
+  padding: 3%;
+  margin-left: 10%;
+  margin-bottom: 10%;
+  margin-right: 10%;
+  position: relative;
+  z-index: 1;
+  border: 1px solid #545657;
+  box-shadow: 0 0 8px rgba(247, 202, 24, 0.05);
+  background-color: rgba(49, 48, 48, 0.3);
+  border-radius: 5px;
+  text-align: left;
+  color: white;
+}
+ 
 .projects-container {
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
   width: 90%;
 }
-
+ 
 .project-card {
   background-color: rgba(27, 27, 27, 0.3);
   border: 1px solid #545657;
@@ -469,27 +489,27 @@ nav li.slide {
   overflow: hidden;
   transition: transform 0.3s ease;
 }
-
+ 
 .project-card:hover {
   transform: translateY(-5px);
 }
-
+ 
 .project-image {
   width: 100%;
-  height: 200px;
+  height: 170px;
   object-fit: cover;
 }
-
+ 
 .project-info {
   padding: 15px;
 }
-
+ 
 .project-title {
   font-size: 20px;
   color: #efefef;
   margin-bottom: 10px;
 }
-
+ 
 .project-description {
   font-size: 14px;
   color: #cccccc;

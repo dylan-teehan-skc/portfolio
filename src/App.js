@@ -5,6 +5,7 @@ import AboutMe from './components/AboutMe';
 import Projects from './components/Projects';
 import Chatbot from './components/Chatbot';
 import Navigation from './components/Navigation';
+import ProjectPage from './components/ProjectPage'; 
 
 function App() {
   return (
@@ -16,6 +17,8 @@ function App() {
           <Route path="/projects" element={<Projects />} />
           <Route path="/chatbot" element={<Chatbot />} />
           <Route path="/Navigation" element={<Navigation />} />
+          <Route path="/" element={<Projects />} />
+          <Route path="/projects/:id" element={<ProjectPage />} />
         </Routes>
         <Navigation />
       </div>
