@@ -42,7 +42,9 @@ function Projects() {
         {projectsData.map(project => (
           <Link to={`/projects/${project.id}`} key={project.id} className="project-link">
             <div className="project-card">
-              <img src={project.image} alt={project.title} className="project-image" />
+              <div className="project-image-container">
+                <img src={project.image} alt={project.title} className="project-image" />
+              </div>
               <div className="project-info">
                 <h2 className="project-title">{project.title}</h2>
                 <p className="project-description">{project.shortDescription}</p>

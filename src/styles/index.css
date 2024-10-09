@@ -117,10 +117,10 @@ section .title {
   border-radius: 50%;
 }
  
-.bubble:nth-child(2) { width: 150px; height: 150px; left: 50%; animation-delay: 1s; }
-.bubble:nth-child(3) { width: 200px; height: 200px; left: 80%; animation-delay: 3s; }
+.bubble:nth-child(2) { width: 150px; height: 150px; left: 65%; animation-delay: 1s; }
+.bubble:nth-child(3) { width: 200px; height: 200px; left: 85%; animation-delay: 3s; }
 .bubble:nth-child(4) { width: 120px; height: 120px; left: 5%; animation-delay: 5s; }
- 
+
 nav {
   width: 100%; /* Full width */
   background-color: #0b0b0b; /* Dark background color */
@@ -254,7 +254,156 @@ nav li.slide {
   transition: left 0.3s ease; /* Smooth transition effect */
   transform: translateY(0); /* Ensure vertical alignment */
 }
+nav {
+  width: 100%; /* Full width */
+  background-color: #0b0b0b; /* Dark background color */
+  position: fixed; /* Fixes position at the bottom */
+  bottom: 0; /* Aligns to the bottom of the viewport */
+  height: 100px; /* Set height */
+  z-index: 1; /* Ensure nav is above other content */
+}
+ 
+/* Styling for the unordered list inside the nav */
+nav ul {
+  position: absolute; /* Absolute positioning for the list */
+  top: 0; /* Align to the top of the nav */
+  left: 0; /* Align to the left edge */
+  list-style-type: none; /* Remove bullet points */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margin */
+  width: 100%; /* Extend the width beyond the viewport */
+}
+ 
+/* Styling for each list item in the nav */
+nav li {
+  margin: 0; /* Remove margin */
+  display: inline-block; /* Display inline-block for alignment */
+  margin-bottom: 2px; /* Margin at the bottom */
+  line-height: 100px; /* Line height for vertical centering */
+  width: 20%; /* Set width as a percentage of viewport width */
+  text-align: center; /* Center text */
+  color: #555; /* Text color */
+  transition: background-color 0.5s 0.2s ease, color 0.3s ease; /* Smooth transition effects */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-size: 80%; /* Font size */
+  text-transform: uppercase; /* Uppercase text */
+  letter-spacing: 4px; /* Spacing between letters */
+  font-weight: 800; /* Font weight */
+  transform: translateY(100%); /* Initial position for animation */
+  position: relative; /* Relative positioning for pseudo-elements */
+}
+ 
+/* Style for active list item */
+nav li.active {
+  background-color: #151515; /* Dark background for active state */
+  color: #efefef; /* Light text color for active state */
+}
+ 
+/* Style for the pseudo-element after active list item */
+nav li.active::after {
+  content: ""; /* Empty content for the line */
+  position: absolute; /* Absolute positioning for the line */
+  bottom: -2px; /* Position the line at the bottom */
+  left: 0; /* Align to the left edge */
+  width: 100%; /* Full width of the list item */
+  height: 2px; /* Height of the line */
+  background-color: #f7ca18; /* Yellow line */
+}
+ 
+/* Animation for list items */
+nav li:nth-child(1) {
+  animation: pop 0.5s 0.15s 1 forwards; /* Apply animation */
+}
+ 
+nav li:nth-child(2) {
+  animation: pop 0.5s 0.3s 1 forwards; /* Apply animation */
+}
+ 
+nav li:nth-child(3) {
+  animation: pop 0.5s 0.45s 1 forwards; /* Apply animation */
+}
+ 
+nav li:nth-child(4) {
+  animation: pop 0.5s 0.6s 1 forwards; /* Apply animation */
+}
+ 
+nav li:nth-child(5) {
+  animation: pop 0.5s 0.75s 1 forwards; /* Apply animation */
+}
+ 
+nav li:nth-child(6) {
+  animation: pop 0.5s 0.9s 1 forwards; /* Apply animation */
+}
+ 
+nav li:nth-child(7) {
+  animation: pop 0.5s 1.05s 1 forwards; /* Apply animation */
+}
+ 
+/* Hover and active states for list items */
+nav li:hover {
+  color: #ececec; /* Light color on hover */
+}
+ 
+nav li:active {
+  background-color: #222; /* Darker background on active state */
+}
+ 
+/* Slide effect for list items */
+nav li:nth-child(1):hover ~ .slide {
+  left: 0; /* Move slide to the first item */
+}
+ 
+nav li:nth-child(2):hover ~ .slide {
+  left: 20vw; /* Move slide to the second item */
+}
+ 
+nav li:nth-child(3):hover ~ .slide {
+  left: 40vw; /* Move slide to the third item */
+}
+ 
+nav li:nth-child(4):hover ~ .slide {
+  left: 60vw; /* Move slide to the fourth item */
+}
+ 
+nav li:nth-child(5):hover ~ .slide {
+  left: 80vw; /* Move slide to the fifth item */
+}
+ 
+nav li:nth-child(6):hover ~ .slide {
+  left: 100vw; /* Move slide to the sixth item */
+}
+ 
+nav li:nth-child(7):hover ~ .slide {
+  left: 120vw; /* Move slide to the seventh item */
+}
+ 
+/* Styling for the sliding element */
+nav li.slide {
+  position: absolute; /* Absolute positioning for the slide */
+  left: -20vw; /* Initial off-screen position */
+  top: 0; /* Align to the top of the nav */
+  background-color: #fff; /* White background */
+  z-index: -1; /* Place behind other content */
+  height: 2px; /* Height of the slide */
+  margin-top: 98px; /* Position below the nav items */
+  transition: left 0.3s ease; /* Smooth transition effect */
+  transform: translateY(0); /* Ensure vertical alignment */
+}
 
+.projects-section{
+  overflow: visible;
+  margin-bottom: 50px;
+}
+ 
+.projects-section .projects-container .project-card {
+  background-color: rgba(27, 27, 27, 0.3);
+  border: 1px solid #545657;
+  box-shadow: 0 0 8px rgba(247, 202, 24, 0.05);
+  border-radius: 5px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+ 
 /* Responsive adjustments for mobile */
 @media (max-width: 768px) {
   nav {
@@ -323,7 +472,7 @@ nav li.slide {
   flex-direction: column;
   align-items: center;
   padding: 5% 10%;
-  overflow: auto;
+  overflow: auto ;
 }
 
 .projects-section .text-box {
@@ -336,6 +485,7 @@ nav li.slide {
   text-align: left;
   color: var(--text-color);
   text-align: center;
+  align-items: center;
 }
  
 
@@ -354,7 +504,7 @@ nav li.slide {
   gap: 20px; /* Now this will work to add gaps between cards */
 }
  
-.project-card {
+.projects-section .projects-container .project-card {
   background-color: rgba(27, 27, 27, 0.3);
   border: 1px solid #545657;
   box-shadow: 0 0 8px rgba(247, 202, 24, 0.05);
@@ -368,10 +518,10 @@ nav li.slide {
   transform: translateY(-5px);
 }
  
-.project-image {
-  width: 100%;
+.projects-section .project-image {
+  width: 150vh;
   height: auto; 
-  object-fit: contain;
+  object-fit: cover;
 }
  
 .project-info {
@@ -444,7 +594,7 @@ nav li.slide {
     display: block; /* Ensure block layout on mobile */
   }
 
-  .project-image {
+  .projects-section .project-image {
     width: 100%;
     height: auto; /* Maintain aspect ratio on smaller screens */
     object-fit: contain; /* Prevent image cropping */
@@ -460,6 +610,10 @@ nav li.slide {
     margin-left: 0;
   }
 
+  .projects-section .text-box{
+    align-items: center;
+  }
+
   nav li {
     padding: 0px 0px;
     font-size: 8px; 
@@ -472,8 +626,14 @@ nav li.slide {
     font-size: clamp(1rem, 6vw, 1.5rem);
   }
 
-  nav li{
-    font-size: 40%;
+  nav {
+    height: 10%;
+    width: 100%;
+  }
+  nav li {
+    font-size: 10%; 
+    text-align: center;
+    width: 20%;
   }
 
   .projects-container {
@@ -487,9 +647,10 @@ nav li.slide {
   .project-card {
     height: auto; /* Let the card adapt to its content on mobile */
     display: block; /* Ensure block layout on mobile */
+    width: auto;
   }
 
-  .project-image {
+  .projects-section .project-image {
     width: 100%;
     height: auto; /* Maintain aspect ratio on smaller screens */
     object-fit: contain; /* Prevent image cropping */
@@ -517,11 +678,69 @@ nav li.slide {
     grid-template-columns: 1fr;
   }
 }
- 
 /* Accessibility and Performance Improvements */
 @media (prefers-reduced-motion: reduce) {
   .bubble, nav li, .project-card {
     animation: none;
     transition: none;
   }
+}
+
+.chatbot-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.chat-messages {
+  height: 400px;
+  overflow-y: auto;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+}
+
+.message {
+  margin-bottom: 10px;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.user {
+  background-color: #e6f2ff;
+  text-align: right;
+  color: black
+}
+
+.bot {
+  background-color: #f0f0f0;
+  color: #0b0b0b;
+}
+
+.chat-input {
+  display: flex;
+}
+
+.chat-input input {
+  flex-grow: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.chat-input button {
+  margin-left: 10px;
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.chat-input button:disabled {
+  background-color: #ccc;
 }

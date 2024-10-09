@@ -1,54 +1,68 @@
-import React, { useState } from 'react';
+// frontend/src/components/Chatbot.js
 
-const ChatBot = () => {
-  const [input, setInput] = useState('');
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+
+const Chatbot = () => {
   const [messages, setMessages] = useState([]);
+  const [input, setInput] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [backendStatus, setBackendStatus] = useState('Checking...');
+
+  useEffect(() => {
+    // Test backend connection on component mount
+    axios.get('http://localhost:5000/test')
+      .then(response => {
+        setBackendStatus('Connected');
+      })
+      .catch(error => {
+        console.error('Backend connection error:', error);
+        setBackendStatus('Not connected');
+      });
+  }, []);
 
   const sendMessage = async () => {
     if (input.trim() === '') return;
 
-    setMessages([...messages, { text: input, user: true }]);
+    const newMessages = [...messages, { text: input, sender: 'user' }];
+    setMessages(newMessages);
     setInput('');
+    setIsLoading(true);
 
     try {
-      const response = await fetch('http://localhost:5000/chat', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ message: input }),
-      });
-
-      const data = await response.json();
-      setMessages(msgs => [...msgs, { text: data.response, user: false }]);
+      const response = await axios.post('http://localhost:5000/chat', { message: input });
+      setMessages([...newMessages, { text: response.data.reply, sender: 'bot' }]);
     } catch (error) {
       console.error('Error:', error);
+      setMessages([...newMessages, { text: 'Sorry, an error occurred.', sender: 'bot' }]);
+    } finally {
+      setIsLoading(false);
     }
   };
 
   return (
-    <div className="max-w-md mx-auto mt-10 p-4 border rounded shadow">
-      <div className="h-80 overflow-y-auto mb-4">
-        {messages.map((msg, index) => (
-          <div key={index} className={`mb-2 ${msg.user ? 'text-right' : 'text-left'}`}>
-            <span className={`inline-block p-2 rounded ${msg.user ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}>
-              {msg.text}
-            </span>
+    <div className="chatbot-container">
+      <div className="backend-status">Backend status: {backendStatus}</div>
+      <div className="chat-messages">
+        {messages.map((message, index) => (
+          <div key={index} className={`message ${message.sender}`}>
+            {message.text}
           </div>
         ))}
+        {isLoading && <div className="message bot">Thinking...</div>}
       </div>
-      <div className="flex">
+      <div className="chat-input">
         <input
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          className="flex-grow p-2 border rounded-l"
-          placeholder="Type a message..."
+          onKeyPress={(e) => e.key === 'Enter' && sendMessage()}
+          placeholder="Type your message here..."
         />
-        <button onClick={sendMessage} className="bg-blue-500 text-white p-2 rounded-r">Send</button>
+        <button onClick={sendMessage} disabled={isLoading}>Send</button>
       </div>
     </div>
   );
 };
 
-export default ChatBot;
+export default Chatbot;
