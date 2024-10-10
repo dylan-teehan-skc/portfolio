@@ -69,6 +69,7 @@ section .title {
   border-radius: 5px; /* Slightly rounded corners */
   text-align: center;
 }
+
 .title span {
   display: inline-block;
   font-size: clamp(1.5rem, 5vw, 3rem);
@@ -393,6 +394,11 @@ nav li.slide {
 .projects-section{
   overflow: visible;
   margin-bottom: 50px;
+  width: 100%;
+}
+
+.projects-section .text-box{
+  align-items: center;
 }
  
 .projects-section .projects-container .project-card {
@@ -457,7 +463,7 @@ nav li.slide {
   font-weight: 200;
   letter-spacing: 0.25em;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
  
 .about-section .text-box h2 {
@@ -482,7 +488,6 @@ nav li.slide {
   box-shadow: 0 0 8px rgba(247, 202, 24, 0.05);
   background-color: rgba(49, 48, 48, 0.3);
   border-radius: 5px;
-  text-align: left;
   color: var(--text-color);
   text-align: center;
   align-items: center;
@@ -495,7 +500,7 @@ nav li.slide {
   font-weight: 200;
   letter-spacing: 0.25em;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 15%;
 }
 
 .projects-container { 
@@ -687,37 +692,42 @@ nav li.slide {
 }
 
 .chatbot-container {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+  margin-left: 5%;
+  width: 90%;
+  height: 80vh;
+  overflow: auto;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  margin-top: 4%;
 }
 
 .chat-messages {
-  height: 400px;
+  height: 90%;
+  width: 100%;
   overflow-y: auto;
   margin-bottom: 20px;
   padding: 10px;
-  border: 1px solid #eee;
   border-radius: 8px;
 }
 
 .message {
   margin-bottom: 10px;
   padding: 8px;
-  border-radius: 8px;
+  width: fit-content;
 }
 
 .user {
-  background-color: #e6f2ff;
-  text-align: right;
-  color: black
+  border-radius: 8px 8px 0px 8px;
+  color: black;
+  margin-left: auto;
+  background-color: var(--secondary-color);
 }
 
 .bot {
-  background-color: #f0f0f0;
+  background-color:lightgray;
   color: #0b0b0b;
+  border-radius: 8px 8px 8px 0px;
+  max-width: 70%;
 }
 
 .chat-input {
@@ -727,8 +737,10 @@ nav li.slide {
 .chat-input input {
   flex-grow: 1;
   padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 10px;
+  border: none;
+  background-color: #2f2f2f;
+  color: white;
 }
 
 .chat-input button {
@@ -743,4 +755,31 @@ nav li.slide {
 
 .chat-input button:disabled {
   background-color: #ccc;
+}
+
+.contact .text-box{
+  width: 40%;
+  margin-left: 30%;
+  margin-top: 20%;
+  padding: 2%;
+  border: 1px solid #545657;
+  box-shadow: 0 0 8px rgba(247, 202, 24, 0.05);
+  background-color: rgba(49, 48, 48, 0.3);
+  border-radius: 5px;
+  text-align: left;
+  color: var(--text-color);
+  text-align: center;
+}
+
+.contact .text-box h1{
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  color: var(--primary-color);
+  font-weight: 200;
+  letter-spacing: 0.25em;
+  text-align: center;
+  margin-bottom: 5%;
+}
+.contact .text-box a{
+  margin: 2%;
+
 }

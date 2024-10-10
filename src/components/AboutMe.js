@@ -12,7 +12,6 @@ function AboutMe() {
       <div className="section-title">	
         <h1>ABOUT ME</h1>
       </div>
-        <h1>I'm Dylan Teehan!</h1>
         <h2>First year student in the BSc/MSc Immersive Software Engineering (ISE)  </h2>
         <p>
         My journey in software engineering is driven by a curiosity for innovative technologies and a desire to create impactful solutions.

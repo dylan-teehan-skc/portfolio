@@ -1,5 +1,3 @@
-# backend/app.py
-
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import google.generativeai as genai
@@ -28,13 +26,13 @@ if not api_key:
 
 try:
     genai.configure(api_key=api_key)
-    model = genai.GenerativeModel('gemini-pro')
+    model = genai.GenerativeModel('gemini-1.5-pro-002')
 except Exception as e:
     app.logger.error(f"Error configuring Gemini API: {str(e)}")
     raise
 
-# Your custom prompt
-CUSTOM_PROMPT = """Reply to given questions."""
+f = open("prompt.txt", "r")
+CUSTOM_PROMPT = f.read()
 
 @app.route('/')
 def home():

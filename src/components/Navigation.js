@@ -32,7 +32,7 @@ function Navigation() {
           <li><Link to="/about" className="nav-link"><span>About Me</span></Link></li>
           <li><Link to="/projects" className="nav-link"><span>Projects</span></Link></li>
           <li><Link to="/chatbot" className="nav-link"><span>Chatbot</span></Link></li>
-          <li><Link to="#contact" className="nav-link"><span>Contact Me</span></Link></li>
+          <li><Link to="/contact" className="nav-link"><span>Contact</span></Link></li>
           <li className="slide"></li>
         </ul>
       </nav>

@@ -12,10 +12,10 @@ function ProjectPage() {
   return (
   <section className="projects-section">
     <div className="text-box">
-    <div className="section-title">
-      <h1>{project.title}</h1>
-      <img src={project.image} width="100%" height="100%" alt={project.title}  />
-      </div>
+      <div className="section-title">
+        <h1>{project.title}</h1>
+        <img src={project.image} width="100%" height="100%" alt={project.title}  />
+        </div>
     <div className="body">
       <p>{project.longDescription}</p>
     </div>
