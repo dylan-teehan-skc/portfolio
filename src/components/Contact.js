@@ -4,6 +4,7 @@ import '../styles/index.css';
 
 const Contact = () => {
   return (
+    <section className='contact-section'>
     <div className='contact'>
         <div className='text-box'>
         <h1>CONTACT ME</h1>
@@ -18,6 +19,7 @@ const Contact = () => {
           </a>
         </div>
         </div>
+    </section>
   );
 };
 
