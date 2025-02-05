@@ -17,7 +17,7 @@ export const projectsData = [
   {
     id: 2,
     title: "CVE EXTRACTOR",
-    shortDescription: '',
+    shortDescription: 'An AI tool that extracts CVE data from security articles using multiple LLMs.',
     longDescription:  <p><br></br>CVE-extractor is a comprehensive software project designed to enhance cybersecurity relevance assessment. It leverages AI models, web scraping, and structured prompts to extract CVE numbers from articles, enabling efficient tagging of vulnerabilities. Through components like content extraction, RSS feed processing, Reddit post scraping, and a user-friendly GUI, cytidel-parser streamlines the identification and contextual understanding of potential threats in online content. Its purpose lies in bolstering vulnerability intelligence by automating data extraction and analysis, ultimately providing valuable insights for cybersecurity professionals.<br></br><br></br>
     CVE-extractor is built to extract key metadata from articles which mention specific security vulnerabilities, it works by firstly running a basic get request - if the webpage was no accessible through this request it switches to using playwright. Once it successfully gets the HTML it then moves to the content extraction phase. If the content was not extracted successfully it switches to using Newspaper4K or Python-Readability. Once the model is sure it has received content, this content is then pushed through AI Model 1 - checking if there is enough legible content for further extraction. If there is enough legible content it is pushed into AI Model 2 which extracts the required metadata (ie. vulnerability_type, active_exploitation, exploit_availability) and returns this content in json format - this metadata is then pushed to a separate database and stored.<br></br><br></br>
     A simple frontend was built to showcase live extraction using PyQT. It allows for both RSS feed parsing and single article parsing. CVE-extractor allows for LLM agnostic parsing suitable with a wide range of models such as ChatGPT, Gemini and Claude APIs - all it requires is an API key.</p>,
@@ -26,7 +26,7 @@ export const projectsData = [
   {
     id: 3,
     title: "SAOIRSE - MULTI-AGENT SYSTEM MANAGER",
-    shortDescription: "Saoirse is an agent pipeline and multi agent system editor with a graphical user interface. It allows users to create, visualize, and execute workflows composed of AI agents. ",
+    shortDescription: "An agent pipeline and multi agent system editor with a GUI that allows users to execute AI agent workflows intuitively",
     longDescription: ' ',
     image: saoirse
   }
