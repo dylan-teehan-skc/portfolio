@@ -8,13 +8,13 @@ const Contact = () => {
     <div className='contact'>
         <div className='text-box'>
         <h1>CONTACT ME</h1>
-          <a href="https://www.linkedin.com/in/dylanteehan/" >
+          <a href="https://www.linkedin.com/in/dylanteehan/" target="_blank" rel="noopener noreferrer">
             <Linkedin size={32} />
           </a>
-          <a href="dylan.teehan@gmail.com">
+          <a href="mailto:dylan.teehan@gmail.com">
             <Mail size={32} />
           </a>
-          <a href="https://github.com/dylan-teehan-skc">
+          <a href="https://github.com/dylan-teehan-skc" target="_blank" rel="noopener noreferrer">
             <Github size={32} />
           </a>
         </div>

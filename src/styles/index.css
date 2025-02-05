@@ -123,272 +123,116 @@ section .title {
 .bubble:nth-child(4) { width: 120px; height: 120px; left: 5%; animation-delay: 5s; }
 
 nav {
-  width: 100%; /* Full width */
-  background-color: #0b0b0b; /* Dark background color */
-  position: fixed; /* Fixes position at the bottom */
-  bottom: 0; /* Aligns to the bottom of the viewport */
-  height: 10%; /* Set height */
-  overflow: hidden; /* Hide any overflow */
-  z-index: 1; /* Ensure nav is above other content */
+  width: 100%;
+  background-color: #0b0b0b;
+  position: fixed;
+  bottom: 0;
+  height: 100px;
+  z-index: 1;
 }
 
-/* Styling for the unordered list inside the nav */
 nav ul {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-around;
   list-style-type: none;
   padding: 0;
   margin: 0;
+  width: 100%;
 }
 
-/* Styling for each list item in the nav */
 nav li {
-  margin: 0; /* Remove margin */
-  display: flex; /* Use flexbox for alignment */
-  justify-content: center; /* Center text horizontally */
-  align-items: center; /* Center text vertically */
-  height: 98px; /* Set height */
-  width: 20vw; /* Set width as a percentage of viewport width */
-  color: #555; /* Text color */
-  transition: background-color 0.5s 0.2s ease, color 0.3s ease; /* Smooth transition effects */
-  cursor: pointer; /* Pointer cursor on hover */
-  font-size: 15px; /* Font size */
-  text-transform: uppercase; /* Uppercase text */
-  letter-spacing: 4px; /* Spacing between letters */
-  font-weight: 800; /* Font weight */
-  position: relative; /* Relative positioning for pseudo-elements */
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 98px;
+  width: 25%;
+  color: #555;
+  transition: background-color 0.5s 0.2s ease, color 0.3s ease;
+  cursor: pointer;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-weight: 800;
+  position: relative;
 }
 
-/* Styling for links inside list items */
 nav li a {
-  text-decoration: none; /* Remove underline from links */
-  color: inherit; /* Inherit color from li */
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  display: flex; /* Use flexbox */
-  justify-content: center; /* Center text horizontally */
-  align-items: center; /* Center text vertically */
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Style for active list item */
 nav li.active {
-  background-color: #151515; /* Dark background for active state */
-  color: #efefef; /* Light text color for active state */
+  background-color: #151515;
+  color: #efefef;
 }
 
-/* Style for the pseudo-element after active list item */
 nav li.active::after {
-  content: ""; /* Empty content for the line */
-  position: absolute; /* Absolute positioning for the line */
-  bottom: -2px; /* Position the line at the bottom */
-  left: 0; /* Align to the left edge */
-  width: 100%; /* Full width of the list item */
-  height: 2px; /* Height of the line */
-  background-color: #f7ca18; /* Yellow line */
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #f7ca18;
 }
 
-/* Animation for list items */
 nav li:nth-child(1) {
-  animation: pop 0.5s 0.15s 1 forwards; /* Apply animation */
+  animation: pop 0.5s 0.15s 1 forwards;
 }
+
 nav li:nth-child(2) {
-  animation: pop 0.5s 0.15s 1 forwards; /* Apply animation */
+  animation: pop 0.5s 0.15s 1 forwards;
 }
+
 nav li:nth-child(3) {
-  animation: pop 0.5s 0.15s 1 forwards; /* Apply animation */
+  animation: pop 0.5s 0.15s 1 forwards;
 }
+
 nav li:nth-child(4) {
-  animation: pop 0.5s 0.15s 1 forwards; /* Apply animation */
+  animation: pop 0.5s 0.15s 1 forwards;
 }
-nav li:nth-child(5) {
-  animation: pop 0.5s 0.15s 1 forwards; /* Apply animation */
-}
-/* Repeat animation for other list items as needed */
 
 nav li:hover {
-  color: #ececec; /* Light color on hover */
+  color: #ececec;
 }
- 
+
 nav li:active {
-  background-color: #222; /* Darker background on active state */
+  background-color: #222;
 }
- 
-/* Slide effect for list items */
+
 nav li:nth-child(1):hover ~ .slide {
-  left: 0; /* Move slide to the first item */
+  left: 0;
 }
- 
+
 nav li:nth-child(2):hover ~ .slide {
-  left: 20vw; /* Move slide to the second item */
+  left: 25%;
 }
- 
+
 nav li:nth-child(3):hover ~ .slide {
-  left: 40vw; /* Move slide to the third item */
+  left: 50%;
 }
- 
+
 nav li:nth-child(4):hover ~ .slide {
-  left: 60vw; /* Move slide to the fourth item */
+  left: 75%;
 }
- 
-nav li:nth-child(5):hover ~ .slide {
-  left: 80vw; /* Move slide to the fifth item */
-}
- 
-nav li:nth-child(6):hover ~ .slide {
-  left: 100vw; /* Move slide to the sixth item */
-}
- 
-nav li:nth-child(7):hover ~ .slide {
-  left: 120vw; /* Move slide to the seventh item */
-}
- 
-/* Styling for the sliding element */
+
 nav li.slide {
-  position: absolute; /* Absolute positioning for the slide */
-  left: -20vw; /* Initial off-screen position */
-  top: 0; /* Align to the top of the nav */
-  background-color: #fff; /* White background */
-  z-index: -1; /* Place behind other content */
-  height: 2px; /* Height of the slide */
-  margin-top: 98px; /* Position below the nav items */
-  transition: left 0.3s ease; /* Smooth transition effect */
-  transform: translateY(0); /* Ensure vertical alignment */
-}
-nav {
-  width: 100%; /* Full width */
-  background-color: #0b0b0b; /* Dark background color */
-  position: fixed; /* Fixes position at the bottom */
-  bottom: 0; /* Aligns to the bottom of the viewport */
-  height: 100px; /* Set height */
-  z-index: 1; /* Ensure nav is above other content */
-}
- 
-/* Styling for the unordered list inside the nav */
-nav ul {
-  position: absolute; /* Absolute positioning for the list */
-  top: 0; /* Align to the top of the nav */
-  left: 0; /* Align to the left edge */
-  list-style-type: none; /* Remove bullet points */
-  padding: 0; /* Remove padding */
-  margin: 0; /* Remove margin */
-  width: 100%; /* Extend the width beyond the viewport */
-}
- 
-/* Styling for each list item in the nav */
-nav li {
-  margin: 0; /* Remove margin */
-  display: inline-block; /* Display inline-block for alignment */
-  margin-bottom: 2px; /* Margin at the bottom */
-  line-height: 100px; /* Line height for vertical centering */
-  width: 20%; /* Set width as a percentage of viewport width */
-  text-align: center; /* Center text */
-  color: #555; /* Text color */
-  transition: background-color 0.5s 0.2s ease, color 0.3s ease; /* Smooth transition effects */
-  cursor: pointer; /* Pointer cursor on hover */
-  font-size: 80%; /* Font size */
-  text-transform: uppercase; /* Uppercase text */
-  letter-spacing: 4px; /* Spacing between letters */
-  font-weight: 800; /* Font weight */
-  transform: translateY(100%); /* Initial position for animation */
-  position: relative; /* Relative positioning for pseudo-elements */
-}
- 
-/* Style for active list item */
-nav li.active {
-  background-color: #151515; /* Dark background for active state */
-  color: #efefef; /* Light text color for active state */
-}
- 
-/* Style for the pseudo-element after active list item */
-nav li.active::after {
-  content: ""; /* Empty content for the line */
-  position: absolute; /* Absolute positioning for the line */
-  bottom: -2px; /* Position the line at the bottom */
-  left: 0; /* Align to the left edge */
-  width: 100%; /* Full width of the list item */
-  height: 2px; /* Height of the line */
-  background-color: #f7ca18; /* Yellow line */
-}
- 
-/* Animation for list items */
-nav li:nth-child(1) {
-  animation: pop 0.5s 0.15s 1 forwards; /* Apply animation */
-}
- 
-nav li:nth-child(2) {
-  animation: pop 0.5s 0.3s 1 forwards; /* Apply animation */
-}
- 
-nav li:nth-child(3) {
-  animation: pop 0.5s 0.45s 1 forwards; /* Apply animation */
-}
- 
-nav li:nth-child(4) {
-  animation: pop 0.5s 0.6s 1 forwards; /* Apply animation */
-}
- 
-nav li:nth-child(5) {
-  animation: pop 0.5s 0.75s 1 forwards; /* Apply animation */
-}
- 
-nav li:nth-child(6) {
-  animation: pop 0.5s 0.9s 1 forwards; /* Apply animation */
-}
- 
-nav li:nth-child(7) {
-  animation: pop 0.5s 1.05s 1 forwards; /* Apply animation */
-}
- 
-/* Hover and active states for list items */
-nav li:hover {
-  color: #ececec; /* Light color on hover */
-}
- 
-nav li:active {
-  background-color: #222; /* Darker background on active state */
-}
- 
-/* Slide effect for list items */
-nav li:nth-child(1):hover ~ .slide {
-  left: 0; /* Move slide to the first item */
-}
- 
-nav li:nth-child(2):hover ~ .slide {
-  left: 20vw; /* Move slide to the second item */
-}
- 
-nav li:nth-child(3):hover ~ .slide {
-  left: 40vw; /* Move slide to the third item */
-}
- 
-nav li:nth-child(4):hover ~ .slide {
-  left: 60vw; /* Move slide to the fourth item */
-}
- 
-nav li:nth-child(5):hover ~ .slide {
-  left: 80vw; /* Move slide to the fifth item */
-}
- 
-nav li:nth-child(6):hover ~ .slide {
-  left: 100vw; /* Move slide to the sixth item */
-}
- 
-nav li:nth-child(7):hover ~ .slide {
-  left: 120vw; /* Move slide to the seventh item */
-}
- 
-/* Styling for the sliding element */
-nav li.slide {
-  position: absolute; /* Absolute positioning for the slide */
-  left: -20vw; /* Initial off-screen position */
-  top: 0; /* Align to the top of the nav */
-  background-color: #fff; /* White background */
-  z-index: -1; /* Place behind other content */
-  height: 2px; /* Height of the slide */
-  margin-top: 98px; /* Position below the nav items */
-  transition: left 0.3s ease; /* Smooth transition effect */
-  transform: translateY(0); /* Ensure vertical alignment */
+  position: absolute;
+  left: -25%;
+  top: 0;
+  background-color: #fff;
+  z-index: -1;
+  height: 2px;
+  margin-top: 98px;
+  transition: left 0.3s ease;
+  transform: translateY(0);
+  width: 25%;
 }
 
 .projects-section{
@@ -410,14 +254,13 @@ nav li.slide {
   transition: transform 0.3s ease;
 }
  
-/* Responsive adjustments for mobile */
 @media (max-width: 768px) {
   nav {
-    height: 8%; /* Adjust height for smaller screens */
+    height: 8%;
   }
   nav li {
-    font-size: 12px; /* Decrease font size */
-    height: 80px; /* Adjust height for smaller screens */
+    font-size: 12px;
+    height: 80px;
   }
 }
 
@@ -505,35 +348,44 @@ nav li.slide {
 }
 
 .projects-container { 
-  display: flex; /* Change to flex */
-  flex-wrap: wrap; /* Allow wrapping for mobile */
-  gap: 20px; /* Now this will work to add gaps between cards */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px;
 }
- 
-.projects-section .projects-container .project-card {
+
+.project-card {
+  width: 100%;
   background-color: rgba(27, 27, 27, 0.3);
   border: 1px solid #545657;
   box-shadow: 0 0 8px rgba(247, 202, 24, 0.05);
   border-radius: 5px;
   overflow: hidden;
   transition: transform 0.3s ease;
-  min-width: 90%; /* Adjust width or use max-width */
 }
- 
-.project-card:hover {
-  transform: translateY(-5px);
+
+.project-image-container {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
 }
- 
-.projects-section .project-image {
-  width: 150vh;
-  height: auto; 
+
+.project-image {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 }
- 
+
 .project-info {
   padding: 15px;
 }
- 
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
 .project-title {
   font-size: clamp(1rem, 2vw, 1.25rem);
   color: var(--text-color);
@@ -545,7 +397,6 @@ nav li.slide {
   color: #cccccc;
 }
  
-/* Animations */
 @keyframes bubble {
   0%, 100% { transform: translateY(0) translateX(0); opacity: 0; }
   10% { opacity: 0.8; }
@@ -569,7 +420,6 @@ nav li.slide {
   100% { width: 30px; }
 }
  
-/* Media Queries for Responsive Design */
 @media (max-width: 768px) {
   .title {
     max-width: 95%;
@@ -589,26 +439,26 @@ nav li.slide {
 
   .projects-container {
     display: grid;
-    grid-template-columns: 1fr; /* Single column */
-    gap: 20px; /* Ensure space between project cards */
+    grid-template-columns: 1fr;
+    gap: 20px;
     height: auto;
     width: 95%;
   }
 
   .project-card {
-    height: auto; /* Let the card adapt to its content on mobile */
-    display: block; /* Ensure block layout on mobile */
+    height: auto;
+    display: block;
   }
 
   .projects-section .project-image {
     width: 100%;
-    height: auto; /* Maintain aspect ratio on smaller screens */
-    object-fit: contain; /* Prevent image cropping */
-    margin: 0; /* No extra margin around the image */
+    height: auto;
+    object-fit: contain;
+    margin: 0;
   }
 
-  .bubble:nth-child(2) { width: 140px; height: 140px; left: 5%; animation-delay: 1s; }
-  .bubble:nth-child(3) { width: 100px; height: 100px; left: 55%; animation-delay: 3s; }
+  .bubble:nth-child(2) { width: 140px; height: 140px; left: 5%; animation-delay: 0s; }
+  .bubble:nth-child(3) { width: 100px; height: 100px; left: 55%; animation-delay: 2s; }
   .bubble:nth-child(4) { width: 80px; height: 80px; left: 75%; animation-delay: 5s; }
  
   .about-section .text-box {
@@ -637,35 +487,35 @@ nav li.slide {
     width: 100%;
   }
   nav li {
-    font-size: 10%; 
+    font-size: 10px; 
     text-align: center;
-    width: 20%;
+    width: 25%;
   }
 
   .projects-container {
     display: grid;
-    grid-template-columns: 1fr; /* Single column */
-    gap: 20px; /* Ensure space between project cards */
+    grid-template-columns: 1fr;
+    gap: 20px;
     height: auto;
     width: 95%;
   }
 
   .project-card {
-    height: auto; /* Let the card adapt to its content on mobile */
-    display: block; /* Ensure block layout on mobile */
+    height: auto;
+    display: block;
     width: auto;
   }
 
   .projects-section .project-image {
     width: 100%;
-    height: auto; /* Maintain aspect ratio on smaller screens */
-    object-fit: contain; /* Prevent image cropping */
-    margin: 0; /* No extra margin around the image */
+    height: auto;
+    object-fit: contain;
+    margin: 0;
   }
 
   .project-info {
-    padding: 10px; /* Adjust padding for smaller screens */
-    margin: 0; /* Remove margins */
+    padding: 10px;
+    margin: 0;
   }
 
   .bubble:nth-child(2) { width: 120px; height: 120px; left: 5%; animation-delay: 1s; }
@@ -684,7 +534,7 @@ nav li.slide {
     grid-template-columns: 1fr;
   }
 }
-/* Accessibility and Performance Improvements */
+
 @media (prefers-reduced-motion: reduce) {
   .bubble, nav li, .project-card {
     animation: none;
@@ -788,4 +638,3 @@ nav li.slide {
 .contact .text-box a{
   margin: 2%;
 }
-/* checks */

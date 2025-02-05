@@ -31,7 +31,7 @@ function Navigation() {
           <li><Link to="/" className="nav-link"><span>Home</span></Link></li>
           <li><Link to="/about" className="nav-link"><span>About Me</span></Link></li>
           <li><Link to="/projects" className="nav-link"><span>Projects</span></Link></li>
-          <li><Link to="/chatbot" className="nav-link"><span>Chatbot</span></Link></li>
+          {/* <li><Link to="/chatbot" className="nav-link"><span>Chatbot</span></Link></li> */}
           <li><Link to="/contact" className="nav-link"><span>Contact</span></Link></li>
           <li className="slide"></li>
         </ul>
