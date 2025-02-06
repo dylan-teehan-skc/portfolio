@@ -12,17 +12,24 @@ function AboutMe() {
       <div className="section-title">	
         <h1>ABOUT ME</h1>
       </div>
-        <h2>First year student in the BSc/MSc Immersive Software Engineering (ISE)  </h2>
+        <h2>2nd Year Immersive Software Engineering Student (ISE) </h2>
+        <br />
         <p>
-        My journey in software engineering is driven by a curiosity for innovative technologies and a desire to create impactful solutions.
-        My technical toolkit includes Java, Python, Object-Oriented Design, Django, and Machine Learning Models.
-        I'm also well-versed in version control using Git, and I have experience with data structures, databases, and Agile methodologies.
+        Hey! I'm currently in my second year of the Immersive Software Engineering program at the University of Limerick.
         </p>
         <p>
-        My coursework has given me hands-on experience in app and web development, as well as machine learning applications.
-        Beyond the classroom, I've demonstrated my problem-solving skills by participating in "The European Astro Pi Challenge" and the BT Young Scientist competition. 
-        These experiences have honed my ability to apply theoretical knowledge to real-world problems.
-        As a team player with a track record of success in group projects, I bring strong leadership and collaboration skills to every project I undertake. 
+        
+        I've completed two industry residencies that have shaped my journey as a software engineer. At Dogpatch Labs, 
+        I dove deep into AI and automation, working with Python to build web scraping tools and multi-agent systems to 
+        benefit real-world companies.
+        </p>
+        <p>
+        My second residency at Viotas introduced me to enterprise-level software development. Here, I worked with 
+        TypeScript, AWS tools, and Apache Airflow, while experiencing firsthand how Agile methodologies drive successful 
+        project delivery.
+        </p>
+        <p>
+        These experiences have given me a solid foundation in both cutting-edge AI technologies and enterprise software development. 
         </p>
       </div>
     </section>
